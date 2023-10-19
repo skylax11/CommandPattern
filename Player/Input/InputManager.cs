@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    RaycastHit hit; 
     public void CommandMove(Vector2 direction)
     {
         ICommand command = new DoCommands(direction,GetComponent<Controller>());
@@ -13,10 +14,10 @@ public class InputManager : MonoBehaviour
     public void OnMove(InputValue val)
     {
         Vector2 dir = val.Get<Vector2>();
-        if (dir == Vector2.zero)
-            return;
 
-        dir = val.Get<Vector2>();
+        if (dir == Vector2.zero || Physics2D.Raycast(transform.position,dir,2f,6))
+            return;
+        print(dir);
         CommandMove(dir);
     }
     public void OnUndo()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DoCommands : MonoBehaviour,ICommand
+public class DoCommands : ICommand
 {
     private Controller m_Controller;
     private Vector2 direction;
