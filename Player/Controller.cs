@@ -13,7 +13,6 @@ public class Controller : MonoBehaviour
     }
     public void Move(Vector2 direction)
     {
-        print("sa");
         transform.Translate(direction);
     }
 }

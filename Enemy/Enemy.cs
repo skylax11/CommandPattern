@@ -7,6 +7,6 @@ public class Enemy : MonoBehaviour , IEnemy
 {
     public void MakePlayerLose()
     {
-        print("as");
+        // Will be handled
     }
 }
